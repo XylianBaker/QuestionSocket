@@ -14,6 +14,7 @@ public class Client {
                 PrintWriter writer = new PrintWriter(socket.getOutputStream(), true);
                 ) {
 
+            // Reading the server's response and then sending a request to the server.
             for (int i = 0; i < 3; i++) {
                 String response = reader.readLine();
                 System.out.println("SERVER: " + response);
@@ -23,6 +24,7 @@ public class Client {
                 writer.println(request);
             }
 
+            // Reading the final answer from the server and printing it out.
             String finalAnswer = reader.readLine();
             System.out.println("Server: " + finalAnswer);
         } catch (IOException e) {
